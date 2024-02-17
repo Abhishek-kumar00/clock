@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body class="h-screen w-screen flex place-content-center transition bg-slate-900">
+    <div class="flex flex-col justify-center items-center">
+        <div id="clock" class="w-96 h-96 flex justify-center items-center bg-[url(clock.png)] bg-cover border-4 border-solid border-slate-800 rounded-full before:z-20 neo-border">
+            <div class="fixed w-6 h-6 bg-slate-50 opacity-75 rounded-full">
+                <div id="hour" class="z-10 place-content-center top-2 left-1 flex justify-center absolute before:absolute before:w-2 before:h-20 " style=" transform: rotateZ('90deg'); transform-origin:bottom ;">
+                    <div class=" left-1 absolute w-2 h-20 rounded-full neo"></div>
+                </div>
+                <div id="min" class=" place-content-center top-2 left-1 z-50 bg-red flex justify-center absolute before:absolute before:w-2 before:h-32"style="transform: rotateZ('90deg'); transform-origin:bottom">
+                    <div class=" left-1 absolute w-2 h-32 rounded-full neo "></div>
+                </div>
+                <div id="sec" class=" place-content-center top-2 left-1 z-50 flex justify-center absolute before:absolute before:w-2 before:h-40" style="transform: rotateZ('90deg'); transform-origin:bottom">
+                    <div class=" left-1 absolute w-2 h-40 rounded-full neo"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class=" button transition ease-in-out delay-150 flex flex-col left-10 top-10"style="position: relative; top: 20px;">
+        <label id="written" class="transition ease-in-out delay-150"style="color:white;" for="colorSelector"> select a color: </label>
+        <select class="neo-border rounded-md border-cyan-200" name="color" id="colorSelector" onchange="changeColor(this)">
+            <option class="rounded-md" value="rgb(15 23 42 / var(--tw-bg-opacity))">default</option>
+            <option class="rounded-md" value="#fae8ff">white</option>
+            <option class="rounded-md" value="#fef08a">yellow</option>
+            <option class="rounded-md" value="#2dd4bf">pastel hues</option>
+            <option class="rounded-md" value="pink">pink</option>
+            <option class="rounded-md" value="#e879f9">purple</option>
+        </select>
+    </div>
+    <style>
+        .neo{
+            border: rgb(30 41 59/var(--tw-bg-opacity)) 1px solid;
+            box-shadow: 0 -2px 5px rgba(255,255,255, 0.05), inset 0 -4px 4px rgba(255,255,255,0.05),1px 4px 4px rgba(255,255,255,0.3),inset 0 4px 4px rgba(0,0,0,0.6);
+            backdrop-filter: blur(2px);
+        }
+        .neo-border {
+            box-shadow: 5px 5px 10px #1e1e1e, -5px -5px 10px #2e2e2e;
+        }
+        #hour{
+            z-index: -1;
+        }
+        #sec{
+            z-index: -1;
+
+        }
+        #min{
+            z-index: -1;
+        }   
+    </style>
+
+    <script src="script.js"></script>
+</body>
+</html>
